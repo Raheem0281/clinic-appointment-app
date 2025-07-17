@@ -1,0 +1,10 @@
+{% extends 'clinicapp/base.html' %}
+
+{% block content %}
+    <div class="alert alert-success">
+        <h4 class="alert-heading">Appointment Booked Successfully!</h4>
+        <p>With Dr. {{ doctor.name }} on <strong>{{ date }}</strong> at <strong>{{ time }}</strong>.</p>
+    </div>
+
+    <a href="{% url 'doctor_list' %}" class="btn btn-primary">Back to Doctors</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'clinicapp/base.html' %}
+
+{% block content %}
+    <h2 class="mb-4">Book Appointment with {{ doctor.name }}</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Date:</label>
+            <input type="date" name="date" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Time:</label>
+            <input type="time" name="time" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Book Appointment</button>
+    </form>
+
+    <a href="{% url 'doctor_list' %}" class="btn btn-secondary mt-3">Back to Doctor List</a>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'clinicapp/base.html' %}
+
+{% block content %}
+    <h2 class="mb-4">Available Doctors</h2>
+    <ul class="list-group">
+        {% for doctor in doctors %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                    <strong>{{ doctor.name }}</strong> - {{ doctor.specialization }} <br>
+                    <small>Available: {{ doctor.available_time }}</small>
+                </div>
+                <a href="{% url 'book_appointment' doctor.id %}" class="btn btn-success">Book Appointment</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'logout' %}" class="btn btn-secondary mt-3">Logout</a>
+{% endblock %}

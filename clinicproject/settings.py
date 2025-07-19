@@ -14,8 +14,7 @@ SECRET_KEY = 'django-insecure-0-1g2^gf1ubi7r)e@q3h(4(awj0^n%x5mq7z+cbgqg8zb!y!@&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['clinic-appointment-app.up.railway.app']
-
+ALLOWED_HOSTS = ['clinic-appointment-app.up.railway.app', 'clinic-appointment-app-production.up.railway.app']
 
 # Application definition
 

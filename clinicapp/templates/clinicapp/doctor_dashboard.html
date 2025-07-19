@@ -1,17 +1,20 @@
 {% extends 'clinicapp/base.html' %}
 
 {% block content %}
+<div class="container mt-5">
     <h2>Welcome Dr. {{ doctor.name }}</h2>
     <h4 class="mt-4">Your Appointments</h4>
     <ul class="list-group">
         {% for appointment in appointments %}
             <li class="list-group-item">
-                Patient: {{ appointment.patient.user.username }} <br>
-                Date: {{ appointment.appointment_date }} Time: {{ appointment.appointment_time }}
+                <strong>Patient:</strong> {{ appointment.patient.user.username }} <br>
+                <strong>Date:</strong> {{ appointment.appointment_date }} <br>
+                <strong>Time:</strong> {{ appointment.appointment_time }}
             </li>
         {% empty %}
             <li class="list-group-item">No appointments yet.</li>
         {% endfor %}
     </ul>
     <a href="{% url 'logout' %}" class="btn btn-secondary mt-3">Logout</a>
+</div>
 {% endblock %}

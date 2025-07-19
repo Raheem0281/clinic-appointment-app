@@ -1,10 +1,15 @@
 {% extends 'clinicapp/base.html' %}
 
 {% block content %}
-    <div class="alert alert-success">
-        <h4 class="alert-heading">Appointment Booked Successfully!</h4>
-        <p>With Dr. {{ doctor.name }} on <strong>{{ date }}</strong> at <strong>{{ time }}</strong>.</p>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="alert alert-success text-center">
+                <h4 class="alert-heading">Appointment Booked Successfully!</h4>
+                <p>With Dr. {{ doctor.name }} on <strong>{{ date }}</strong> at <strong>{{ time }}</strong>.</p>
+                <a href="{% url 'doctor_list' %}" class="btn btn-primary w-100 mt-3">Back to Doctors</a>
+            </div>
+        </div>
     </div>
-
-    <a href="{% url 'doctor_list' %}" class="btn btn-primary">Back to Doctors</a>
+</div>
 {% endblock %}

@@ -1,20 +1,30 @@
 {% extends 'clinicapp/base.html' %}
 
 {% block content %}
-    <h2 class="mb-4">Book Appointment with {{ doctor.name }}</h2>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="mb-4">Book Appointment with {{ doctor.name }}</h2>
 
-    <form method="post">
-        {% csrf_token %}
-        <div class="mb-3">
-            <label class="form-label">Date:</label>
-            <input type="date" name="date" class="form-control" required>
-        </div>
-        <div class="mb-3">
-            <label class="form-label">Time:</label>
-            <input type="time" name="time" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-primary">Book Appointment</button>
-    </form>
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label class="form-label">Date:</label>
+                            <input type="date" name="date" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Time:</label>
+                            <input type="time" name="time" class="form-control" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Book Appointment</button>
+                    </form>
 
-    <a href="{% url 'doctor_list' %}" class="btn btn-secondary mt-3">Back to Doctor List</a>
+                    <a href="{% url 'doctor_list' %}" class="btn btn-secondary w-100 mt-3">Back to Doctor List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}

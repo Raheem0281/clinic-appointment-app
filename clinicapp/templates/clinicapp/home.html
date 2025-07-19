@@ -1,14 +1,18 @@
 {% extends 'clinicapp/base.html' %}
 
 {% block content %}
-<div class="text-center mt-5">
-    <h1>Welcome to Future Clinic</h1>
-    <p class="lead">Book appointments with trusted doctors easily.</p>
-    <div class="mt-4">
-        <a href="{% url 'login' %}" class="btn btn-primary m-2">Patient Login</a>
-        <a href="{% url 'register' %}" class="btn btn-outline-primary m-2">Patient Register</a>
-        <a href="{% url 'doctor_login' %}" class="btn btn-success m-2">Doctor Login</a>
-        <a href="{% url 'doctor_register' %}" class="btn btn-outline-success m-2">Doctor Register</a>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <h1>Welcome to Future Clinic</h1>
+            <p class="lead">Book appointments with trusted doctors easily.</p>
+            <div class="mt-4 d-grid gap-2">
+                <a href="{% url 'login' %}" class="btn btn-primary">Patient Login</a>
+                <a href="{% url 'register' %}" class="btn btn-outline-primary">Patient Register</a>
+                <a href="{% url 'doctor_login' %}" class="btn btn-success">Doctor Login</a>
+                <a href="{% url 'doctor_register' %}" class="btn btn-outline-success">Doctor Register</a>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}
